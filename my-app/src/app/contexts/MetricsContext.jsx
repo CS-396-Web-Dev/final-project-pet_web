@@ -7,7 +7,7 @@ import {
 
   
   const MetricsContext = createContext({
-    recipes:{},
+    metrics:{},
     setMetrics: () => {},
   });
   
