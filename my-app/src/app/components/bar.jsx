@@ -22,6 +22,7 @@ export default function bar({value, maxValue = 100, label}) {
                 }}
                 ></div>
             </div>
+            <p>{value}</p>
         </div>
     )
 }
