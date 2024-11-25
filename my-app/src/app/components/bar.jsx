@@ -11,7 +11,7 @@ export default function bar({value, maxValue = 100, label}) {
         color = "#FB3030";
     }
     return (
-        <div>
+        <div style={styles.textAndBar}>
             <p>{label}</p>
             <div style={styles.barContainer}>
                 <div 
@@ -28,6 +28,13 @@ export default function bar({value, maxValue = 100, label}) {
 
 // css style of the bar
 const styles = {
+    textAndBar: {
+        display: "flex",
+        alignItems: "center",
+        gap: "20px",
+        width: "330px",
+    },
+
     barContainer: {
         height: "35px",
         width: "200px",
