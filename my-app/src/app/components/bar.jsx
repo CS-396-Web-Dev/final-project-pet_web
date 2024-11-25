@@ -2,11 +2,25 @@ import React from "react";
 
 export default function bar({value, maxValue = 100, label}) {
     const percentage = (value / maxValue) * 100;
+    var color = "green";
+    if (percentage > 66) {
+        color = "#00CD18";
+    } else if (percentage > 33){
+        color = "#FBD230";
+    } else {
+        color = "#FB3030";
+    }
     return (
         <div>
             <p>{label}</p>
             <div style={styles.barContainer}>
-                <div style={styles.bar}></div>
+                <div 
+                style={{
+                    ...styles.bar,
+                    width: `${percentage}%`,
+                    backgroundColor: `${color}`
+                }}
+                ></div>
             </div>
         </div>
     )
@@ -28,7 +42,5 @@ const styles = {
     bar: {
         height: "24px",
         borderRadius: "30px",
-        backgroundColor: "#00CD18",
-        width: "50%"
     }
 }
