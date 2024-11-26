@@ -22,9 +22,9 @@ export function updateMetricsFunction() {
         const hours = Math.floor((new Date() - new Date(time)) / (1000 * 60 * 60));
 
         setMetrics((prev) => {
-            const newHappiness = metrics.happiness - hoursElapsed * 2;
-            const newSatiation = pet.satiation - hoursElapsed * 3;
-            const newCleanliness = pet.cleanliness - hoursElapsed * 1;
+            const newHappiness = metrics.happiness - hours * 2;
+            const newSatiation = metrics.satiation - hours * 3;
+            const newCleanliness = metrics.cleanliness - hours * 1;
     
             const newHealth = Math.round(
             newHappiness * 0.4 + newSatiation * 0.4 + newCleanliness * 0.2
