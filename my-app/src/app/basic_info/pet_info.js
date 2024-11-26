@@ -1,4 +1,4 @@
-import { useMetricsContext } from "../contexts//MetricsContext";
+import { useMetricsContext } from "@/app/contexts//MetricsContext";
 
 const { metrics, setMetrics } = useMetricsContext();
 
