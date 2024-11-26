@@ -30,7 +30,7 @@ export default function Buttons({buttonType}) {
                     dictCopy.health += 5;
                   }
                   else{
-                    dictCopy.health = 5;
+                    dictCopy.health = 100;
                   }
               }else{
                 if (dictCopy.health <= 85){

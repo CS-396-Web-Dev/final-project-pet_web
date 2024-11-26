@@ -1,6 +1,6 @@
 "use client";
 import { useMetricsContext} from '../contexts/MetricsContext';
-import Bar from './Bar';
+import Bar from './bar';
 import React from "react";
 
 export default function Bars() {
