@@ -19,7 +19,7 @@ import {
     const [metrics, setMetrics] = useState({health: 0, happiness: 0, satiation:0, cleanliness: 0});
   
     return (
-      <MetricsContext.Provider value={{ metrics, setMetrics}}>
+      <MetricsContext.Provider value={{metrics, setMetrics}}>
         {children}
       </MetricsContext.Provider>
     );
