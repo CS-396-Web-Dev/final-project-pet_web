@@ -17,7 +17,7 @@ export default function Buttons({buttonType}) {
             e.preventDefault();
 
             setMetrics((prev) => {
-              const dictCopy = prev;
+              const dictCopy = {...prev};
               if (buttonType != 'health'){
                 if (dictCopy[buttonType] <= 80){
                     dictCopy[buttonType] += 20;
@@ -30,7 +30,7 @@ export default function Buttons({buttonType}) {
                     dictCopy.health += 5;
                   }
                   else{
-                    dictCopy.health = 5;
+                    dictCopy.health = 100;
                   }
               }else{
                 if (dictCopy.health <= 85){

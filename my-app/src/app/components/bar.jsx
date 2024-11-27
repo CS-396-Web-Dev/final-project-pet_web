@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function bar({value, maxValue = 100, label}) {
+export default function Bar({value, maxValue = 100, label}) {
     const percentage = (value / maxValue) * 100;
     var color = "green";
     if (percentage > 66) {
