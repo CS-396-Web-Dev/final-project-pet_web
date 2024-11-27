@@ -14,7 +14,7 @@ const MetricsContext = createContext({
 export const useMetricsContext = () => useContext(MetricsContext);
 
 export default function MetricsContextProvider({ children }) {
-  const [metrics, setMetrics] = useState({ health: 0, happiness: 0, satiation: 0, cleanliness: 0 });
+  const [metrics, setMetrics] = useState({ health: 50, happiness: 50, satiation: 50, cleanliness: 50 });
 
   useEffect(() => {
     const savedMetrics = localStorage.getItem('metrics');

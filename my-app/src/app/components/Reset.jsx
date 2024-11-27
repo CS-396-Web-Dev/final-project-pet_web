@@ -15,10 +15,10 @@ export default function Reset() {
 
             setMetrics((prev) => {
               const dictCopy = {...prev};
-              dictCopy.happiness = 0;
-              dictCopy.health = 0;
-              dictCopy.satiation = 0;
-              dictCopy.cleanliness = 0;
+              dictCopy.happiness = 50;
+              dictCopy.health = 50;
+              dictCopy.satiation = 50;
+              dictCopy.cleanliness = 50;
               return dictCopy;
             })
 
