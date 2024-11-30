@@ -22,7 +22,7 @@ export default function Bar({value, maxValue = 100, label}) {
                 }}
                 ></div>
             </div>
-            <p>{value}</p>
+            <p style={styles.value}>{value}</p>
         </div>
     )
 }
@@ -56,5 +56,10 @@ const styles = {
         height: "24px",
         borderRadius: "30px",
         transition: "width 0.5s ease-in-out",
+    },
+
+    value: {
+        width: "50px",
+        textAlign: "left"
     }
 }
