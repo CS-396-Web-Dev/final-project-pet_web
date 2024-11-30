@@ -14,15 +14,16 @@
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 
 .container {
-  @apply flex-col items-center bg-gray-100 min-h-screen py-6;
+  @apply flex flex-col items-center justify-center w-full h-full bg-gray-100;
+  padding-left: 10%;
+  padding-bottom: 5%;
+}
+
+body {
+  @apply m-0 p-0 w-screen h-screen bg-gray-100;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -31,50 +32,32 @@ body {
 }
 
 .info .pet-name {
-  @apply items-center justify-center space-x-2;
+  @apply flex items-center justify-center space-x-2;
 }
 
 .info img {
   @apply w-6 h-6 cursor-pointer;
 }
 
-
 .content {
-  @apply justify-center items-center gap-6 mb-6;
+  @apply flex flex-row justify-center items-center gap-6 mb-6;
 }
 
 .image img {
-  @apply w-48 h-auto;
+  @apply w-96 h-auto;
 }
-
 
 .status-bar {
-  @apply flex-col gap-4;
-}
-
-.status-bar div {
-  @apply items-center space-x-2;
-}
-
-.status-bar label {
-  @apply text-gray-700 font-medium;
-}
-
-.status-bar progress {
-  @apply flex-grow h-4 rounded bg-gray-200;
-}
-
-.status-bar span {
-  @apply text-gray-700 font-medium;
+  @apply flex flex-col gap-4 w-full max-w-md;
 }
 
 
 .buttons {
-  @apply justify-around w-full max-w-xl;
+  @apply flex justify-center flex-wrap gap-6 w-full max-w-3xl;
 }
 
 .buttons button {
-  @apply text-white py-2 px-4 rounded-full text-lg font-bold shadow-md transition transform hover:scale-105;
+  @apply text-white py-3 px-5 rounded-full text-lg font-bold shadow-md transition transform hover:scale-105;
 }
 
 .buttons .feed {
@@ -91,4 +74,61 @@ body {
 
 .buttons .play {
   @apply bg-yellow-500 hover:bg-yellow-600;
+}
+
+
+@media (max-width: 1024px) {
+  
+  .content {
+    @apply flex flex-col items-center gap-6 !important;
+  }
+
+  .image {
+    @apply order-1;
+  }
+
+  .status-bar {
+    @apply order-2;
+  }
+
+  .image img {
+    @apply w-96 h-auto;
+  }
+
+  .buttons {
+    @apply flex justify-center gap-4 w-full max-w-3xl;
+  }
+  
+  .buttons button {
+    @apply text-white py-2 px-6 rounded-full text-lg font-bold shadow-md transition transform hover:scale-105;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .content {
+    @apply flex flex-col items-center gap-6;
+  }
+
+  .image {
+    @apply order-1;
+  }
+
+  .status-bar {
+    @apply order-2;
+  }
+
+  .image img {
+    @apply w-64 h-auto;
+  }
+
+  .buttons {
+    @apply grid grid-cols-2 gap-x-44 gap-y-6 justify-center pl-8;
+  }
+
+  .buttons button {
+    @apply w-40 text-white py-2 px-4 rounded-full text-lg font-bold shadow-md transition transform hover:scale-105;
+  }
+  
 }
