@@ -5,8 +5,6 @@ import React from "react";
 
 export default function Bars() {
     const {metrics} = useMetricsContext();
-    console.log('bars component')
-    console.log(metrics)
 
     return (
         <div className = "bars">

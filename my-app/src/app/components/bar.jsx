@@ -12,7 +12,7 @@ export default function Bar({value, maxValue = 100, label}) {
     }
     return (
         <div style={styles.textAndBar}>
-            <p>{label}</p>
+            <p style={styles.label}>{label}</p>
             <div style={styles.barContainer}>
                 <div 
                 style={{
@@ -29,11 +29,16 @@ export default function Bar({value, maxValue = 100, label}) {
 
 // css style of the bar
 const styles = {
+    label: {
+        width: "80px",
+        textAlign: "right",
+    },
+
     textAndBar: {
         display: "flex",
         alignItems: "center",
         gap: "20px",
-        width: "330px",
+        width: "100%",
     },
 
     barContainer: {
