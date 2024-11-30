@@ -50,5 +50,6 @@ const styles = {
     bar: {
         height: "24px",
         borderRadius: "30px",
+        transition: "width 0.5s ease-in-out",
     }
 }
