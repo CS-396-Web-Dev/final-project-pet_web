@@ -47,7 +47,7 @@ export default function Home() {
   <div className="content flex flex-col sm:flex-row justify-center items-center gap-6 mb-6">
     
     <div className="image">
-      <img src="/assets/pikachu.png" alt="Pikachu" className="w-48 h-auto" />
+      <img src="/assets/pikachu.gif" alt="Pikachu" className="w-48 h-auto" />
     </div>
 
     
