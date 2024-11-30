@@ -12,7 +12,7 @@ export default function Buttons({buttonType}) {
 
         <button
             id = {`${buttonType}-button`}
-            className = "bg-purple-800 hover:bg-purple-950 text-white py-2 px-4 rounded-full mr-5"
+            className = "bg-purple-800 hover:bg-purple-950 text-white py-2 px-5 rounded-full mr-5"
             onClick={(e) => {
             e.preventDefault();
 
