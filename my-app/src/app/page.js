@@ -45,7 +45,7 @@ export default function Home() {
             : "Senior",
         time: Date.now(),
       }));
-    }, 1000); // update every 1 second
+    }, 10000); // update every 1 second
 
     return () => clearInterval(interval);
   }, [info, metrics, setMetrics, setInfo]);
