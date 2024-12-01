@@ -28,7 +28,7 @@ export default function Home() {
     }, 1000); // update every 1 second
 
     return () => clearInterval(interval);
-  }, [info.time, metrics, setMetrics, setInfo]);
+  }, [info, metrics, setMetrics, setInfo]);
 
   return (
     <div className="container flex flex-col items-center bg-gray-100 min-h-screen py-6">
