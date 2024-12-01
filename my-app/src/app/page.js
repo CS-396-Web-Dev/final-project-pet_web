@@ -7,23 +7,40 @@ import Buttons from "./components/Buttons";
 import Reset from "./components/Reset";
 import { useInfoContext } from "./contexts/InfoContext";
 import { useMetricsContext } from "./contexts/MetricsContext";
-import { updatePetAge, updatePetWeight, updateMetricsFunction } from "@/app/basic_info/pet_info";
+import {
+  updatePetAge,
+  updatePetWeight,
+  updateMetricsFunction,
+} from "@/app/basic_info/pet_info";
 
 export default function Home() {
   const { info, setInfo } = useInfoContext();
   const { metrics, setMetrics } = useMetricsContext();
   useEffect(() => {
     const interval = setInterval(() => {
-      const age = updatePetAge(info.time,info.age);
-      const updatedWeight = updatePetWeight(info.weight, info.time, metrics.health);
+      const age = updatePetAge(info.time, info.age);
+      const updatedWeight = updatePetWeight(
+        info.weight,
+        info.time,
+        metrics.health
+      );
       updateMetricsFunction(setMetrics, info.time);
 
       setInfo((prev) => ({
         ...prev,
         age: age,
         weight: updatedWeight,
-        stage: age < 10 ? "infant" : "mature",
-        time : Date.now()
+        stage:
+          age < 1
+            ? "Infant"
+            : age < 3
+            ? "Child"
+            : age < 5
+            ? "Teenager"
+            : age < 10
+            ? "Adult"
+            : "Senior",
+        time: Date.now(),
       }));
     }, 1000); // update every 1 second
 
@@ -32,35 +49,38 @@ export default function Home() {
 
   return (
     <div className="container flex flex-col items-center bg-gray-100 min-h-screen py-6">
-  <Reset />
+      <Reset />
 
-  
-  <div className="info text-center mb-6">
-    <div className="flex items-center justify-center space-x-2">
-      <PetName />
-      <img src="/assets/edit_btn.png" alt="Edit Button" className="w-6 h-6 cursor-pointer" />
+      <div className="info text-center mb-6">
+        <div className="flex items-center justify-center space-x-2">
+          <PetName />
+          <img
+            src="/assets/edit_btn.png"
+            alt="Edit Button"
+            className="w-6 h-6 cursor-pointer"
+          />
+        </div>
+        <PetAge ageInHour={info.age} growthStage={info.stage} />
+        <PetWeight weight={info.weight} />
+      </div>
+
+      <div className="content flex flex-col sm:flex-row justify-center items-center gap-6 mb-6">
+        <div className="image">
+          <img
+            src="/assets/pikachu.gif"
+            alt="Pikachu"
+            className="w-48 h-auto"
+          />
+        </div>
+
+        <div className="status-bar flex flex-col gap-4">
+          <Bars />
+        </div>
+      </div>
+
+      <div className="buttons flex justify-around w-full max-w-xl">
+        <Buttons />
+      </div>
     </div>
-    <PetAge ageInHour={info.age} growthStage={info.stage} />
-    <PetWeight weight={info.weight} />
-  </div>
-
-  
-  <div className="content flex flex-col sm:flex-row justify-center items-center gap-6 mb-6">
-    
-    <div className="image">
-      <img src="/assets/pikachu.gif" alt="Pikachu" className="w-48 h-auto" />
-    </div>
-
-    
-    <div className="status-bar flex flex-col gap-4">
-      <Bars />
-    </div>
-  </div>
-
-  
-  <div className="buttons flex justify-around w-full max-w-xl">
-    <Buttons />
-  </div>
-</div>
   );
 }
