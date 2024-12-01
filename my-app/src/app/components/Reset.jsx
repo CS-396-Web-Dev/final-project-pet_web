@@ -28,6 +28,7 @@ export default function Reset() {
                 dictCopy.stage = "Infant";
                 dictCopy.weight = 5;
                 dictCopy.time = Date.now();
+                dictCopy.isAlive = true;
                 return dictCopy;
             })
 

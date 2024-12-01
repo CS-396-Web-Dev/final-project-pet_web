@@ -14,7 +14,7 @@ const InfoContext = createContext({
 export const useInfoContext = () => useContext(InfoContext);
 
 export default function InfoContextProvider({ children }) {
-  const [info, setInfo] = useState({ age: 0, stage: "Infant", weight: 5, time: Date.now() });
+  const [info, setInfo] = useState({ age: 0, stage: "Infant", weight: 5, time: Date.now(), isAlive: true});
 
   useEffect(() => {
     const savedInfo = localStorage.getItem('info');

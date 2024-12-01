@@ -1,8 +1,10 @@
 import React from "react";
 import { useMetricsContext} from '../contexts/MetricsContext';
+import { useInfoContext} from '../contexts/InfoContext'
 
 export default function PikachuImage() {
     const {metrics} = useMetricsContext();
+    const {info} = useInfoContext();
     console.log(metrics.health)
     var srcLink = "/assets/pikachu.gif"
     // Logic for choosing the image
@@ -11,7 +13,7 @@ export default function PikachuImage() {
         srcLink = "/assets/sleep_pikachu.gif"
     }
     // death stage
-    if (metrics.health <= 0 || metrics.happiness <= 0 || metrics.satiation <=0 || metrics.cleanliness <= 0 ){
+    if (!info.isAlive){
         srcLink = "/assets/gravestone.jpg"
     } 
     return (
