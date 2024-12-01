@@ -44,7 +44,7 @@ body {
 }
 
 .image img {
-  @apply w-96 h-auto;
+  @apply w-auto h-96;
 }
 
 .status-bar {
