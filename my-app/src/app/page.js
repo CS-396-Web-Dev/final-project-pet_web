@@ -14,7 +14,7 @@ export default function Home() {
   const { metrics, setMetrics } = useMetricsContext();
   useEffect(() => {
     const interval = setInterval(() => {
-      const age = updatePetAge(info.time);
+      const age = updatePetAge(info.time,info.age);
       const updatedWeight = updatePetWeight(info.weight, info.time, metrics.health);
       updateMetricsFunction(setMetrics, info.time);
 
@@ -23,6 +23,7 @@ export default function Home() {
         age: age,
         weight: updatedWeight,
         stage: age < 10 ? "infant" : "mature",
+        time : Date.now()
       }));
     }, 1000); // update every 1 second
 
