@@ -4,6 +4,7 @@ export function updatePetAge(time, age) {
   return newAge.toFixed(2);
 }
 
+<<<<<<< HEAD
 export function updatePetWeight(weight, time, health) {
   const minutes = (new Date() - new Date(time)) / (1000 * 60);
   const weightChange =
@@ -12,6 +13,16 @@ export function updatePetWeight(weight, time, health) {
       : 0.1 * minutes; // gain weight if it is healthy
   return Math.max(0, (weight + weightChange).toFixed(1));
 }
+=======
+export function updatePetWeight(weight, time, health)  {
+    const hours = (new Date() - new Date(time)) / (1000 * 60 * 60);
+    const weightChange = health < 60
+    ? -0.1 // lose weight if it is unhealthy based on hours
+    : 0.1; // gain weight if it is healthy
+    console.log(weightChange)
+    return Math.max(0,(weight + weightChange).toFixed(1));
+};
+>>>>>>> c18107993e4408b0c908b5c46b2b244658d6e4d3
 
 export function updateMetricsFunction(setMetrics, time) {
   const minutes = (new Date() - new Date(time)) / (1000 * 60);
