@@ -26,7 +26,7 @@ export default function Reset() {
                 const dictCopy = {...prev};
                 dictCopy.age = 0;
                 dictCopy.stage = "Infant";
-                dictCopy.weight = 0;
+                dictCopy.weight = 5;
                 dictCopy.time = Date.now();
                 return dictCopy;
             })
