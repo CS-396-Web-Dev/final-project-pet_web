@@ -21,29 +21,36 @@ export default function Home() {
   const { metrics, setMetrics } = useMetricsContext();
   useEffect(() => {
     const interval = setInterval(() => {
-      const age = updatePetAge(info.time, info.age);
-      const updatedWeight = updatePetWeight(
-        info.weight,
-        info.time,
-        metrics.health
-      );
+      const age = info.isAlive ? updatePetAge(info.time, info.age) : info.age;
+      const updatedWeight = info.isAlive
+        ? updatePetWeight(info.weight, info.time, metrics.health)
+        : info.weight;
       updateMetricsFunction(setMetrics, info.time);
+      const isAlive =
+        metrics.health <= 0 ||
+        metrics.happiness <= 0 ||
+        metrics.satiation <= 0 ||
+        metrics.cleanliness <= 0
+          ? false
+          : info.isAlive;
 
       setInfo((prev) => ({
         ...prev,
         age: age,
         weight: updatedWeight,
-        stage:
-          age < 1
-            ? "Infant"
-            : age < 3
-            ? "Child"
-            : age < 5
-            ? "Teenager"
-            : age < 10
-            ? "Adult"
-            : "Senior",
+        stage: !isAlive
+          ? "Death"
+          : age < 1
+          ? "Infant"
+          : age < 3
+          ? "Child"
+          : age < 5
+          ? "Teenager"
+          : age < 10
+          ? "Adult"
+          : "Senior",
         time: Date.now(),
+        isAlive: isAlive,
       }));
     }, 30000); // update every 1 second
 
