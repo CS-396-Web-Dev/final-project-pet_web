@@ -2,9 +2,7 @@
 import { useMetricsContext} from '../contexts/MetricsContext';
 
 export default function Buttons({buttonType}) {
-    const {metrics, setMetrics} = useMetricsContext();
-    console.log(metrics)
-    console.log(buttonType)
+    const {setMetrics} = useMetricsContext();
     let buttonName;
     buttonName = {happiness:'Play with Me!', health: 'Heal Me!', cleanliness:'Clean Me!', satiation: 'Feed Me!' };
 
@@ -45,8 +43,6 @@ export default function Buttons({buttonType}) {
               return dictCopy;
   
             })
-
-            console.log(metrics)
           }}>
             {buttonName[buttonType]}
             </button>

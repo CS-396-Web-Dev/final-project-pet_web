@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import MetricsContextProvider from './contexts/MetricsContext';
-import InfoContextProvider from './contexts/InfoContext';
+import MetricsContextProvider from "./contexts/MetricsContext";
+import InfoContextProvider from "./contexts/InfoContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -21,16 +21,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <InfoContextProvider>
-    <MetricsContextProvider>
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <InfoContextProvider>
+          <MetricsContextProvider>{children}</MetricsContextProvider>
+        </InfoContextProvider>
       </body>
     </html>
-    </MetricsContextProvider>
-    </InfoContextProvider>
   );
 }
