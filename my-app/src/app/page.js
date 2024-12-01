@@ -5,8 +5,11 @@ import Bars from "./components/Bars";
 import { PetName, PetAge, PetWeight } from "@/app/components/basicInfoText";
 import Buttons from "./components/Buttons";
 import Reset from "./components/Reset";
+import PikachuImage from "./components/PikachuImage";
+
 import { useInfoContext } from "./contexts/InfoContext";
 import { useMetricsContext } from "./contexts/MetricsContext";
+
 import {
   updatePetAge,
   updatePetWeight,
@@ -66,11 +69,7 @@ export default function Home() {
 
       <div className="content flex flex-col sm:flex-row justify-center items-center gap-6 mb-6">
         <div className="image">
-          <img
-            src="/assets/pikachu.gif"
-            alt="Pikachu"
-            className="w-48 h-auto"
-          />
+          <PikachuImage></PikachuImage>
         </div>
 
         <div className="status-bar flex flex-col gap-4">
