@@ -9,7 +9,7 @@ export function updatePetWeight(weight, time, health) {
   const weightChange =
     health < 60
       ? -0.1 * minutes // lose weight if it is unhealthy based on hours
-      : 0.1 * minutes; // gain weight if it is healthy
+      : 0.5 * minutes; // gain weight if it is healthy
   return Math.max(0, (weight + weightChange).toFixed(1));
 }
 
