@@ -2,19 +2,17 @@
 
 import React, { useState } from "react";
 
-export function PetName() {
-  const [name, setName] = useState("");
-
+export function PetName({info, setInfo}) {
   const handleNameChange = (e) => {
     const newName = e.target.value;
-    setName(newName);
+    setInfo((prev) => ({...prev,name:newName}));
   };
 
   return (
     <div>
       <input
         type="text"
-        value={name}
+        value={info.name || ""}
         onChange={handleNameChange}
         placeholder="Enter pet name"
       />

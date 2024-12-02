@@ -63,7 +63,7 @@ export default function Home() {
 
       <div className="info text-center mb-6">
         <div className="flex items-center justify-center space-x-2">
-          <PetName />
+          <PetName info = {info} setInfo={setInfo}/>
           <img
             src="/assets/edit_btn.png"
             alt="Edit Button"
